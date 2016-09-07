@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Josiah Rooney | Portfolio</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/prism.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- scripts -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/prism.min.js"></script>
+</head>
+<body>
+    <div class="main">
+        <nav class="navbar navbar-default header banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">
+                        Josiah Rooney
+                    </a>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#code"><i class="fa fa-flask" aria-hidden="true"></i> Code</a></li>
+                    <li><a href="#resume"><i class="fa fa-paperclip" aria-hidden="true"></i> Resume</a></li>
+                    <li><a href="#work"><i class="fa fa-briefcase" aria-hidden="true"></i> Work</a></li>
+                    <li><a href="#about"><i class="fa fa-info-circle" aria-hidden="true"></i> About</a></li>
+                    <li><a href="#contact"><i class="fa fa-comment" aria-hidden="true"></i> Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="intro">
+            <div class="hero container">
+                <h1 class="text-center">Hello!</h1>
+                <img class="profile-img" src="http://rooneydev.com/img/profile.jpeg" alt="">
+                <p class="text-center">I'm Josiah</p>
+                <p>I'm a full stack engineer looking to join your team! I am very skilled in object-oriented JavaScript, back end engineering in Python &amp; PHP, and I've got a wide range of skills in everything in between.</p>
+                <p class="text-center"><a href="#">See my code.</a></p>
+            </div>
+        </div>
+
+        <div class="code">
+            <nav class="navbar navbar-default banner">
+                <div class="container">
+                    <h3 id="code"><i class="fa fa-flask" aria-hidden="true"></i> Code</h3>
+                </div>
+            </nav>
+            <div class="container">
+                <p>Here are some examples of my code.</p>
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#basic" aria-controls="basic" role="tab" data-toggle="tab">Basic Algorithms</a></li>
+                    <li role="presentation"><a href="#intermediate" aria-controls="intermediate" role="tab" data-toggle="tab">Intermediate Algorithms</a></li>
+                    <li role="presentation"><a href="#advanced" aria-controls="advanced" role="tab" data-toggle="tab">Advanced Algorithms</a></li>
+                    <li role="presentation"><a href="#misc" aria-controls="misc" role="tab" data-toggle="tab">Misc/Fun Code</a></li>
+                </ul>
+                <div class="code-blocks tab-content">
+
+                    <div role="tabpanel" class="tab-pane active" id="basic">
+
+                        <p>Many of these basic algorithms are my code solutions from freecodecamp.com.</p>
+
+                        <div class="code-block well">
+                            <h4>Reverse a String</h4>
+                            <pre>
+                                <code class="language-js">
+                                function reverseString(str) {
+                                  var newStr = "";
+                                  for (var i = str.length - 1; i >= 0; i--) {
+                                    newStr += str[i];
+                                  }
+                                  return newStr;
+                                }
+                                </code>
+                            </pre>
+                        </div>
+
+
+                        <div class="code-block well">
+                            <h4>Check if String is Palindrome</h4>
+                            <pre>
+                                <code class="language-js">
+                                    function palindrome(str) {
+                                      var re = /[\W_]/g;
+                                      var lowRegStr = str.toLowerCase().replace(re, '');
+                                      var reverseStr = lowRegStr.split('').reverse().join(''); 
+                                      return reverseStr === lowRegStr;
+                                    }
+                                </code>
+                            </pre>
+                        </div>
+
+
+                        <div class="code-block well">
+                            <h4>Find Longest Word</h4>
+                            <pre>
+                                <code class="language-js">
+                                    function findLongestWord(str) {
+                                      var arr = str.split(' ');
+                                      var longest = "";
+                                      for (var i = 0; i < arr.length; i++) {
+                                        if (arr[i].length > longest.length) {
+                                          longest = arr[i];
+                                        }
+                                      }
+                                      return longest.length;
+                                    }
+                                </code>
+                            </pre>
+                        </div>
+
+
+                        <div class="code-block well">
+                            <h4>Title Case a Sentence</h4>
+                            <pre>
+                                <code class="language-js">
+                                    function titleCase(str) {
+                                      var arr = str.toLowerCase().split(' ');
+                                      for (var i = 0; i < arr.length; i++) {
+                                        arr[i] = arr[i][0].toUpperCase() + arr[i].substr(1);
+                                      }
+                                      arr = arr.join(' ');
+                                      return arr;
+                                    }
+                                </code>
+                            </pre>
+                        </div>
+
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane" id="intermediate">
+                        
+                        <div class="code-blocks">
+
+                            <div class="code-block well">
+                                <h4>Factorialize a Number</h4>
+                                <pre>
+                                    <code class="language-js">
+                                        function factorialize(num) {
+                                          if (num <= 1){
+                                            return 1;
+                                          } else {
+                                            return num * factorialize(num - 1);
+                                          }
+                                        }
+                                    </code>
+                                </pre>
+                            </div>
+
+
+
+
+                        </div>
+
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="advanced"></div>
+                    <div role="tabpanel" class="tab-pane" id="misc"></div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+    </div>
+    <script src="js/scripts.js"></script>
+    <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+</body>
+</html>
