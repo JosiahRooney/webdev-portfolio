@@ -263,6 +263,16 @@ body.home .social-link {
 	display: none;
 }
 
+@media (max-width: 1000px) {
+	.code-block {
+		width: 100% !important;
+	}
+
+	.hero {
+		width: 80%;
+	}
+}
+
 @media (max-width: 768px) {
 
 	.navbar-nav.closed {
