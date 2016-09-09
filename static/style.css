@@ -317,4 +317,9 @@ body.home .social-link {
 		padding: 0 10px;
 	}
 
+	small {
+		display: block;
+		margin-top: 10px;
+	}
+
 }
