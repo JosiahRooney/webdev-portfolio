@@ -138,8 +138,6 @@ body.home p {
 
 .code-block {
 	margin: 6px;
-	display: inline-block;
-	width: calc(50% - 14px);
 	vertical-align: top;
 	margin-bottom: 20px;
 }
@@ -152,36 +150,21 @@ body.home p {
 	padding: 12px;
 }
 
+.code-block h3 {
+	margin: -20px -20px 10px;
+	padding: 19px 19px 15px;
+	background-color: #0062df;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	color: white;
+}
+
 .code-block pre {
 	position: relative;
 }
 
 .code .container >p {
 	padding: 20px 0;
-}
-
-code.language-js::after {
-	content: "JavaScript";
-	color: #D6BA33;
-}
-
-code.language-python::after {
-	content: "Python";
-	color: #2af;
-}
-
-code.language-css::after {
-	content: "CSS";
-}
-
-code::after {
-	display: block;
-	font-family: sans-serif;
-	font-size: 1rem;
-	letter-spacing: 0.7px;
-	position: absolute;
-	right: 5px;
-	top: 4px;
 }
 
 .banner-image {
@@ -267,11 +250,23 @@ body.home .social-link {
 	display: none;
 }
 
-@media (max-width: 1000px) {
-	.code-block {
-		width: 100% !important;
-	}
+.hover-info {
+	position: relative;
+	text-decoration: underline;
+	cursor: help;
+}
 
+.hover-info-after {
+	position: absolute;
+	bottom: calc(100% + 4px);
+	left: -4px;
+	width: 200px;
+	padding: 4px;
+	font-size: 75%;
+	background-color: #fff;
+}
+
+@media (max-width: 1000px) {
 	.hero {
 		width: 80%;
 	}

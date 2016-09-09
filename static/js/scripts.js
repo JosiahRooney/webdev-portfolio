@@ -19,3 +19,10 @@ $('.mobile-button').click(function(){
 		$('.navbar-nav').addClass('closed');
 	}
 });
+
+$('.hover-info').hover(function(){
+	var info = $(this).data('hover');
+	$(this).append('<div class="hover-info-after">' + info + '</div>');
+}, function() {
+	$('.hover-info-after').remove();
+});

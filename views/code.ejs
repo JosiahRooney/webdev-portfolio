@@ -24,81 +24,119 @@
                         <p><small><em>If you are currently going through the platform at Free Code Camp, please refrain from spoiling it for yourself by reviewing my code solutions.</em></small></p>
                     </div>
 
-                    <div class="code-block well">
+                    <div class="code-block well row">
                         <h3>Reverse a String</h3>
-                        <p>Objective: return the given string, reversed.</p>
-                        <pre>
-                            <code class="language-js">
-                            function reverseString(str) {
-                                var newStr = "";
-                                for (var i = str.length - 1; i >= 0; i--) {
-                                    newStr += str[i];
+                        <div class="col-md-6">
+                            <p><strong>Objective</strong></p>
+                            <p>Return the given string, reversed.</p>
+                            <p><strong>Explanation</strong></p>
+                            <p>Since strings are <span class="hover-info" data-hover="Cannot be changed once defined.">immutable</span>, we need to create a new string and return it instead.</p>
+                            <p>After creating a new string, we simply run a reverse for loop through the original string, adding each letter as we go backward.</p>
+                            <p>After the loop we return the new, reversed string.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><strong>Code</strong></p>
+                            <pre>
+                                <code class="language-js line-numbers">
+                                function reverseString(str) {
+                                    var newStr = "";
+                                    for (var i = str.length - 1; i >= 0; i--) {
+                                        newStr += str[i];
+                                    }
+                                    return newStr;
                                 }
-                                return newStr;
-                            }
-                            </code>
-                        </pre>
-                        <p><small>My favorite solution is in Python:</small></p>
-                        <pre>
-                            <code class="language-python">
-                                def reverse_string(str):
-                                    return str[::-1]
-                            </code>
-                        </pre>
+                                </code>
+                            </pre>
+                            <p><small>My favorite solution is in Python:</small></p>
+                            <pre>
+                                <code class="language-python line-numbers">
+                                    def reverse_string(str):
+                                        return str[::-1]
+                                </code>
+                            </pre>
+                        </div>
                     </div><!-- .code-block -->
 
 
-                    <div class="code-block well">
+                    <div class="code-block well row">
                         <h3>Check if String is Palindrome</h3>
-                        <p>See if a given string is a palindrome, ignoring whitespace &amp; case.</p>
-                        <pre>
-                            <code class="language-js">
-                                function palindrome(str) {
-                                    var re = /[\W_]/g;
-                                    var lowRegStr = str.toLowerCase().replace(re, '');
-                                    var reverseStr = lowRegStr.split('').reverse().join(''); 
-                                    return reverseStr === lowRegStr;
-                                }
-                            </code>
-                        </pre>
+                        <div class="col-md-6">
+                            <p><strong>Objective</strong></p>
+                            <p>See if a given string is a palindrome, ignoring whitespace, special characters, &amp; case.</p>
+                            <p><strong>Explanation</strong></p>
+                            <p>Since we don't care about <span class="hover-info" data-hover="Spaces between words and line breaks">whitespace</span>, special characters, or case, we just need to bring the string to lowercase and remove all whitespace &amp; special characters, then reverse the string and compare it to the original.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><strong>Code</strong></p>
+                            <pre>
+                                <code class="language-js line-numbers">
+                                    function palindrome(str) {
+                                        var re = /[\W_]/g;
+                                        var lowRegStr = str.toLowerCase().replace(re, '');
+                                        var reverseStr = lowRegStr.split('').reverse().join(''); 
+                                        return reverseStr === lowRegStr;
+                                    }
+                                </code>
+                            </pre>
+                        </div>
                     </div><!-- .code-block -->
 
 
-                    <div class="code-block well">
+                    <div class="code-block well row">
                         <h3>Find Longest Word</h3>
-                        <p>Return the length of the longest word in a string.</p>
-                        <pre>
-                            <code class="language-js">
-                                function findLongestWord(str) {
-                                    var arr = str.split(' ');
-                                    var longest = "";
-                                    for (var i = 0; i < arr.length; i++) {
-                                        if (arr[i].length > longest.length) {
-                                            longest = arr[i];
+                        <div class="col-md-6">
+                            <p><strong>Objective</strong></p>
+                            <p>Return the length of the longest word in a string.</p>
+                            <p><strong>Explanation</strong></p>
+                            <p>First we split the string into words (splitting on spaces). Then we create a variable for the longest word, set originally to zero.</p>
+                            <p>We loop through the array of words, checking each one against the length of the longest. If it is longer, we set the longest to be that word.</p>
+                            <p>Finally we return the longest word's length.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><strong>Code</strong></p>
+                            <pre>
+                                <code class="language-js line-numbers">
+                                    function findLongestWord(str) {
+                                        var arr = str.split(' ');
+                                        var longest = 0;
+                                        for (var i = 0; i < arr.length; i++) {
+                                            if (arr[i].length > longest) {
+                                                longest = arr[i].length;
+                                            }
                                         }
+                                        return longest;
                                     }
-                                    return longest.length;
-                                }
-                            </code>
-                        </pre>
+                                </code>
+                            </pre>
+                        </div>
                     </div><!-- .code-block -->
 
 
-                    <div class="code-block well">
+                    <div class="code-block well row">
                         <h3>Title Case a Sentence</h3>
-                        <p>Convert a given string to title case (each word capitalized).</p>
-                        <pre>
-                            <code class="language-js">
-                                function titleCase(str) {
-                                    var arr = str.toLowerCase().split(' ');
-                                    for (var i = 0; i < arr.length; i++) {
-                                        arr[i] = arr[i][0].toUpperCase() + arr[i].substr(1);
+                        <div class="col-md-6">
+                            <p><strong>Objective</strong></p>
+                            <p>Convert a given string to title case (each word capitalized).</p>
+                            <p><strong>Explanation</strong></p>
+                            <p>First we split the string into an array of words, all set to lowercase. Then we loop through that array with a for loop.</p>
+                            <p>For each iteration we set the first letter to uppercase and join it with the rest of the word.</p>
+                            <p>Finally we return the array, joined back into a string.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><strong>Code</strong></p>
+                            <pre>
+                                <code class="language-js line-numbers">
+                                    function titleCase(str) {
+                                        var arr = str.toLowerCase().split(' ');
+                                        for (var i = 0; i < arr.length; i++) {
+                                            arr[i] = arr[i][0].toUpperCase() + arr[i].substr(1);
+                                        }
+                                        arr = arr.join(' ');
+                                        return arr;
                                     }
-                                    arr = arr.join(' ');
-                                    return arr;
-                                }
-                            </code>
-                        </pre>
+                                </code>
+                            </pre>
+                        </div>
                     </div><!-- .code-block -->
 
 
@@ -106,7 +144,7 @@
                         <h3>Truncate a String</h3>
                         <p>Truncate a string using an ellipsis.</p>
                         <pre>
-                            <code class="language-js">
+                            <code class="language-js line-numbers">
                                 function truncateString(str, num) {
                                     if (num <= 3) {
                                         return str.slice(0, num) + "...";
@@ -133,7 +171,7 @@
                         <h3>Factorialize a Number</h3>
                         <p>Return the factorial of a given number.</p>
                         <pre>
-                            <code class="language-js">
+                            <code class="language-js line-numbers">
                                 function factorialize(num) {
                                     if (num <= 1){
                                         return 1;
@@ -150,7 +188,7 @@
                         <h3>Chunk an Array</h3>
                         <p>Split an array into chunks set by the size argument.</p>
                         <pre>
-                            <code class="language-js">
+                            <code class="language-js line-numbers">
                                 function chunkArrayInGroups(arr, size) {
                                     var temp = [];
                                     var result = [];
@@ -178,7 +216,7 @@
                         <h3>Sum All Numbers in a Range</h3>
                         <p>Return the sum of all numbers in a range (passed in via an array with two elements).</p>
                         <pre>
-                            <code class="language-js">
+                            <code class="language-js line-numbers">
                                 function sumAll(arr) {
                                     arr.sort(function(a,b){
                                         return a-b;
@@ -199,7 +237,7 @@
                         <h3>Diff Two Arrays</h3>
                         <p>Return the symmetric difference of the two arrays.</p>
                         <pre>
-                            <code class="language-js">
+                            <code class="language-js line-numbers">
                                 function diffArray(arr1, arr2) {
                                     var newArr = [];
 
@@ -225,7 +263,7 @@
                         <h3>Check if Boolean</h3>
                         <p>Checks if a value is classified as a boolean primitive</p>
                         <pre>
-                            <code class="language-js">
+                            <code class="language-js line-numbers">
                                 function boolCheck(bool) {
                                     return bool === true || bool === false;
                                 }
