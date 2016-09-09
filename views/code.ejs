@@ -1,0 +1,251 @@
+<% include partials/header %>
+
+    <div class="code banner">
+
+        <div class="container">
+
+            <h1><i class="fa fa-flask" aria-hidden="true"></i> Code <small>It's all talk until the code runs</small></h1>
+
+            <p class="lead">Here are some examples of my code. This allows you to get a feel for what my indentation and formatting preferences are, which is probably a deal breaker for some (4 spaces &gt; tabs).</p>
+
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#basic" aria-controls="basic" role="tab" data-toggle="tab">Basic Algorithms</a></li>
+                <li role="presentation"><a href="#intermediate" aria-controls="intermediate" role="tab" data-toggle="tab">Intermediate Algorithms</a></li>
+                <li role="presentation"><a href="#advanced" aria-controls="advanced" role="tab" data-toggle="tab">Advanced Algorithms</a></li>
+                <li role="presentation"><a href="#misc" aria-controls="misc" role="tab" data-toggle="tab">Misc/Fun Code</a></li>
+            </ul><!-- .nav.nav-tabs -->
+
+            <div class="code-blocks tab-content">
+
+                <div role="tabpanel" class="tab-pane active" id="basic">
+
+                    <div class="tab-header">
+                        <p>Many of these basic algorithms are my code solutions from freecodecamp.com.</p>
+                        <p><small><em>If you are currently going through the platform at Free Code Camp, please refrain from spoiling it for yourself by reviewing my code solutions.</em></small></p>
+                    </div>
+
+                    <div class="code-block well">
+                        <h3>Reverse a String</h3>
+                        <p>Objective: return the given string, reversed.</p>
+                        <pre>
+                            <code class="language-js">
+                            function reverseString(str) {
+                                var newStr = "";
+                                for (var i = str.length - 1; i >= 0; i--) {
+                                    newStr += str[i];
+                                }
+                                return newStr;
+                            }
+                            </code>
+                        </pre>
+                        <p><small>My favorite solution is in Python:</small></p>
+                        <pre>
+                            <code class="language-python">
+                                def reverse_string(str):
+                                    return str[::-1]
+                            </code>
+                        </pre>
+                    </div><!-- .code-block -->
+
+
+                    <div class="code-block well">
+                        <h3>Check if String is Palindrome</h3>
+                        <p>See if a given string is a palindrome, ignoring whitespace &amp; case.</p>
+                        <pre>
+                            <code class="language-js">
+                                function palindrome(str) {
+                                    var re = /[\W_]/g;
+                                    var lowRegStr = str.toLowerCase().replace(re, '');
+                                    var reverseStr = lowRegStr.split('').reverse().join(''); 
+                                    return reverseStr === lowRegStr;
+                                }
+                            </code>
+                        </pre>
+                    </div><!-- .code-block -->
+
+
+                    <div class="code-block well">
+                        <h3>Find Longest Word</h3>
+                        <p>Return the length of the longest word in a string.</p>
+                        <pre>
+                            <code class="language-js">
+                                function findLongestWord(str) {
+                                    var arr = str.split(' ');
+                                    var longest = "";
+                                    for (var i = 0; i < arr.length; i++) {
+                                        if (arr[i].length > longest.length) {
+                                            longest = arr[i];
+                                        }
+                                    }
+                                    return longest.length;
+                                }
+                            </code>
+                        </pre>
+                    </div><!-- .code-block -->
+
+
+                    <div class="code-block well">
+                        <h3>Title Case a Sentence</h3>
+                        <p>Convert a given string to title case (each word capitalized).</p>
+                        <pre>
+                            <code class="language-js">
+                                function titleCase(str) {
+                                    var arr = str.toLowerCase().split(' ');
+                                    for (var i = 0; i < arr.length; i++) {
+                                        arr[i] = arr[i][0].toUpperCase() + arr[i].substr(1);
+                                    }
+                                    arr = arr.join(' ');
+                                    return arr;
+                                }
+                            </code>
+                        </pre>
+                    </div><!-- .code-block -->
+
+
+                    <div class="code-block well">
+                        <h3>Truncate a String</h3>
+                        <p>Truncate a string using an ellipsis.</p>
+                        <pre>
+                            <code class="language-js">
+                                function truncateString(str, num) {
+                                    if (num <= 3) {
+                                        return str.slice(0, num) + "...";
+                                    } else if (str.length > num + 3) {
+                                        return str.slice(0, num - 3) + "...";
+                                    }
+                                    return str;
+                                }
+                            </code>
+                        </pre>
+                    </div><!-- .code-block -->
+
+
+
+
+
+
+
+                </div><!-- .tab-pane -->
+
+                <div role="tabpanel" class="tab-pane" id="intermediate">
+
+                    <div class="code-block well">
+                        <h3>Factorialize a Number</h3>
+                        <p>Return the factorial of a given number.</p>
+                        <pre>
+                            <code class="language-js">
+                                function factorialize(num) {
+                                    if (num <= 1){
+                                        return 1;
+                                    } else {
+                                        return num * factorialize(num - 1);
+                                    }
+                                }
+                            </code>
+                        </pre>
+                    </div><!-- .code-block -->
+
+
+                    <div class="code-block well">
+                        <h3>Chunk an Array</h3>
+                        <p>Split an array into chunks set by the size argument.</p>
+                        <pre>
+                            <code class="language-js">
+                                function chunkArrayInGroups(arr, size) {
+                                    var temp = [];
+                                    var result = [];
+
+                                    for (var i = 0; i < arr.length; i++) {
+                                        if (i % size !== size - 1)
+                                            temp.push(arr[i]);
+                                        else {
+                                            temp.push(arr[i]);
+                                            result.push(temp);
+                                            temp = [];
+                                        }
+                                    }
+
+                                    if (temp.length !== 0)
+                                        result.push(temp);
+                                    return result;
+                                }
+                            </code>
+                        </pre>
+                    </div><!-- .code-block -->
+
+
+                    <div class="code-block well">
+                        <h3>Sum All Numbers in a Range</h3>
+                        <p>Return the sum of all numbers in a range (passed in via an array with two elements).</p>
+                        <pre>
+                            <code class="language-js">
+                                function sumAll(arr) {
+                                    arr.sort(function(a,b){
+                                        return a-b;
+                                    });
+                                    var sum = 0;
+                                    for (var i = arr[0]; i < arr[1]; i++) {
+                                        sum += i;
+                                    }
+                                    sum += arr[1];
+                                    return sum;
+                                }
+                            </code>
+                        </pre>
+                    </div><!-- .code-block -->
+
+
+                    <div class="code-block well">
+                        <h3>Diff Two Arrays</h3>
+                        <p>Return the symmetric difference of the two arrays.</p>
+                        <pre>
+                            <code class="language-js">
+                                function diffArray(arr1, arr2) {
+                                    var newArr = [];
+
+                                    var arr_1 = arr1.filter(function(val) {
+                                        return arr2.indexOf(val) == -1;
+                                    });
+
+                                    var arr_2 = arr2.filter(function(val){
+                                        return arr1.indexOf(val) == -1;
+                                    });
+
+                                    newArr = newArr.concat(arr_1);
+                                    newArr = newArr.concat(arr_2);
+
+                                    return newArr;
+                                }
+                            </code>
+                        </pre>
+                    </div><!-- .code-block -->
+
+
+                    <div class="code-block well">
+                        <h3>Check if Boolean</h3>
+                        <p>Checks if a value is classified as a boolean primitive</p>
+                        <pre>
+                            <code class="language-js">
+                                function boolCheck(bool) {
+                                    return bool === true || bool === false;
+                                }
+                            </code>
+                        </pre>
+                    </div><!-- .code-block -->
+
+
+                    
+                    
+
+                </div><!-- .tab-pane -->
+                
+                <div role="tabpanel" class="tab-pane" id="advanced"></div><!-- .tab-pane -->
+                <div role="tabpanel" class="tab-pane" id="misc"></div><!-- .tab-pane -->
+
+            </div><!-- .code-blocks -->
+        
+        </div><!-- .container -->
+
+    </div><!-- .code -->
+
+<% include partials/footer %>
