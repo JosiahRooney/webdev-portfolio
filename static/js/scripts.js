@@ -65,3 +65,12 @@ function titleCase(str) {
     arr = arr.join(' ');
     return arr;
 }
+
+function truncateString(str, num) {
+    if (num <= 3) {
+        return str.slice(0, num) + "...";
+    } else if (str.length > Number(num) + 3) {
+        return str.slice(0, num) + "...";
+    }
+    return str;
+}

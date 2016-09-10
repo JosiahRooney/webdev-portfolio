@@ -266,6 +266,10 @@ body.home .social-link {
 	background-color: #fff;
 }
 
+.input-group .col-md-6 {
+	padding: 0;
+}
+
 @media (max-width: 1000px) {
 	.hero {
 		width: 80%;

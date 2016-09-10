@@ -249,6 +249,31 @@
                                 </code>
                             </pre>
                         </div>
+                        <div class="try-it col-md-12">
+                            <p><small><em>Try it Yourself!</em></small></p>
+                            <div class="col-md-6">
+                                <div class="input-group">
+                                    <div class="col-md-6">
+                                        <input type="text" placeholder="Input" class="form-control" id="truncate_string_input">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" placeholder="Length" class="form-control" id="truncate_string_length">
+                                    </div>
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" id="truncate_string" type="button">Go</button>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" placeholder="Output" class="form-control" id="truncate_string_output">
+                            </div>
+                            <script>
+                                $('#truncate_string').click(function() {
+                                    $('#truncate_string_output').val(truncateString($('#truncate_string_input').val(),$('#truncate_string_length').val()));
+                                    $('#truncate_string_input').val('');
+                                })
+                            </script>
+                        </div>
                     </div><!-- .code-block -->
 
 
