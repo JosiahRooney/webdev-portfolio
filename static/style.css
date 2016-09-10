@@ -270,6 +270,12 @@ body.home .social-link {
 	padding: 0;
 }
 
+.input-group .col-md-6:first-child input {
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+	border-right: none;
+}
+
 @media (max-width: 1000px) {
 	.hero {
 		width: 80%;

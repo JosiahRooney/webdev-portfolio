@@ -21,7 +21,7 @@
 
                     <div class="tab-header">
                         <p>Many of these basic algorithms are my code solutions from freecodecamp.com.</p>
-                        <p><small><em>If you are currently going through the platform at Free Code Camp, please refrain from spoiling it for yourself by reviewing my code solutions.</em></small></p>
+                        <p><small><em>Note: If you are currently going through the platform at Free Code Camp, please refrain from spoiling it for yourself by reviewing my code solutions.</em></small></p>
                     </div>
 
                     <div class="code-block well row">
@@ -286,48 +286,49 @@
 
                 <div role="tabpanel" class="tab-pane" id="intermediate">
 
-                    <div class="code-block well">
+                    <div class="code-block well row">
                         <h3>Factorialize a Number</h3>
-                        <p>Return the factorial of a given number.</p>
-                        <pre>
-                            <code class="language-js line-numbers">
-                                function factorialize(num) {
-                                    if (num <= 1){
-                                        return 1;
-                                    } else {
-                                        return num * factorialize(num - 1);
-                                    }
-                                }
-                            </code>
-                        </pre>
-                    </div><!-- .code-block -->
-
-
-                    <div class="code-block well">
-                        <h3>Chunk an Array</h3>
-                        <p>Split an array into chunks set by the size argument.</p>
-                        <pre>
-                            <code class="language-js line-numbers">
-                                function chunkArrayInGroups(arr, size) {
-                                    var temp = [];
-                                    var result = [];
-
-                                    for (var i = 0; i < arr.length; i++) {
-                                        if (i % size !== size - 1)
-                                            temp.push(arr[i]);
-                                        else {
-                                            temp.push(arr[i]);
-                                            result.push(temp);
-                                            temp = [];
+                        <div class="col-md-6">
+                            <p><strong>Objective</strong></p>
+                            <p>Return the factorial of a given number.</p>
+                            <p><strong>Explanation</strong></p>
+                            <p>This function uses recursion to return the factorial of a number.</p>
+                            <p>The base case returns when the number passed is less than 2. When the number passed is greater than 2, it passes the number minus 1 as an argument to the recursive function.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><strong>Code</strong></p>
+                            <pre>
+                                <code class="language-js line-numbers">
+                                    function factorialize(num) {
+                                        if (num <= 1){
+                                            return 1;
+                                        } else {
+                                            return num * factorialize(num - 1);
                                         }
                                     }
-
-                                    if (temp.length !== 0)
-                                        result.push(temp);
-                                    return result;
-                                }
-                            </code>
-                        </pre>
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="try-it col-md-12">
+                            <p><small><em>Try it Yourself!</em></small></p>
+                            <div class="col-md-6">
+                                <div class="input-group">
+                                    <input type="text" placeholder="Input" class="form-control" id="factorialize_input">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" id="factorialize" type="button">Go</button>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" placeholder="Output" class="form-control" id="factorialize_output">
+                            </div>
+                            <script>
+                                $('#factorialize').click(function() {
+                                    $('#factorialize_output').val(factorialize($('#factorialize_input').val()));
+                                    $('#factorialize_input').val('');
+                                })
+                            </script>
+                        </div>
                     </div><!-- .code-block -->
 
 
