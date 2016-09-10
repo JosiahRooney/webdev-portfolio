@@ -26,3 +26,42 @@ $('.hover-info').hover(function(){
 }, function() {
 	$('.hover-info-after').remove();
 });
+
+// Code Examples
+function reverseString(str) {
+    var newStr = "";
+    for (var i = str.length - 1; i >= 0; i--) {
+        newStr += str[i];
+    }
+    return newStr;
+}
+
+function palindrome(str) {
+    var re = /[\W_]/g;
+    var lowRegStr = str.toLowerCase().replace(re, '');
+    var reverseStr = lowRegStr.split('').reverse().join(''); 
+    return reverseStr === lowRegStr;
+}
+
+function findLongestWord(str) {
+    var arr = str.split(' ');
+    var longest = 0;
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i].length > longest) {
+            longest = arr[i].length;
+        }
+    }
+    return longest;
+}
+
+function titleCase(str) {
+    var arr = str.toLowerCase().split(' ');
+    var ignore = ['a','of','the','in','is','at','with','and'];
+    for (var i = 0; i < arr.length; i++) {
+        if (ignore.indexOf(arr[i]) != -1 && i > 0 && i < arr.length - 1)
+            continue;
+        arr[i] = arr[i][0].toUpperCase() + arr[i].substr(1);
+    }
+    arr = arr.join(' ');
+    return arr;
+}

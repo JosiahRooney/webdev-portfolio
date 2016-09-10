@@ -55,6 +55,26 @@
                                 </code>
                             </pre>
                         </div>
+                        <div class="try-it col-md-12">
+                            <p><small><em>Try it Yourself!</em></small></p>
+                            <div class="col-md-6">
+                                <div class="input-group">
+                                    <input type="text" placeholder="Input" class="form-control" id="reverse_string_input">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" id="reverse_string" type="button">Go</button>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" placeholder="Output" class="form-control" id="reverse_string_output">
+                            </div>
+                            <script>
+                                $('#reverse_string').click(function() {
+                                    $('#reverse_string_output').val(reverseString($('#reverse_string_input').val()));
+                                    $('#reverse_string_input').val('');
+                                })
+                            </script>
+                        </div>
                     </div><!-- .code-block -->
 
 
@@ -78,6 +98,26 @@
                                     }
                                 </code>
                             </pre>
+                        </div>
+                        <div class="try-it col-md-12">
+                            <p><small><em>Try it Yourself!</em></small></p>
+                            <div class="col-md-6">
+                                <div class="input-group">
+                                    <input type="text" placeholder="Input" class="form-control" id="check_palindrome_input">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" id="check_palindrome" type="button">Go</button>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" placeholder="Output" class="form-control" id="check_palindrome_output">
+                            </div>
+                            <script>
+                                $('#check_palindrome').click(function() {
+                                    $('#check_palindrome_output').val(palindrome($('#check_palindrome_input').val()));
+                                    $('#check_palindrome_input').val('');
+                                })
+                            </script>
                         </div>
                     </div><!-- .code-block -->
 
@@ -109,6 +149,26 @@
                                 </code>
                             </pre>
                         </div>
+                        <div class="try-it col-md-12">
+                            <p><small><em>Try it Yourself!</em></small></p>
+                            <div class="col-md-6">
+                                <div class="input-group">
+                                    <input type="text" placeholder="Input" class="form-control" id="longest_word_input">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" id="longest_word" type="button">Go</button>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" placeholder="Output" class="form-control" id="longest_word_output">
+                            </div>
+                            <script>
+                                $('#longest_word').click(function() {
+                                    $('#longest_word_output').val(findLongestWord($('#longest_word_input').val()));
+                                    $('#longest_word_input').val('');
+                                })
+                            </script>
+                        </div>
                     </div><!-- .code-block -->
 
 
@@ -119,7 +179,7 @@
                             <p>Convert a given string to title case (each word capitalized).</p>
                             <p><strong>Explanation</strong></p>
                             <p>First we split the string into an array of words, all set to lowercase. Then we loop through that array with a for loop.</p>
-                            <p>For each iteration we set the first letter to uppercase and join it with the rest of the word.</p>
+                            <p>For each iteration we set the first letter to uppercase and join it with the rest of the word. If the word is within our "ignore" array, we skip it (unless it is the first or last word.</p>
                             <p>Finally we return the array, joined back into a string.</p>
                         </div>
                         <div class="col-md-6">
@@ -128,7 +188,10 @@
                                 <code class="language-js line-numbers">
                                     function titleCase(str) {
                                         var arr = str.toLowerCase().split(' ');
+                                        var ignore = ['a','of','the','in','is','at','with','and'];
                                         for (var i = 0; i < arr.length; i++) {
+                                            if (ignore.indexOf(arr[i]) != -1 && i > 0 && i < arr.length - 1)
+                                                continue;
                                             arr[i] = arr[i][0].toUpperCase() + arr[i].substr(1);
                                         }
                                         arr = arr.join(' ');
@@ -137,24 +200,55 @@
                                 </code>
                             </pre>
                         </div>
+                        <div class="try-it col-md-12">
+                            <p><small><em>Try it Yourself!</em></small></p>
+                            <div class="col-md-6">
+                                <div class="input-group">
+                                    <input type="text" placeholder="Input" class="form-control" id="title_case_input">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" id="title_case" type="button">Go</button>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" placeholder="Output" class="form-control" id="title_case_output">
+                            </div>
+                            <script>
+                                $('#title_case').click(function() {
+                                    $('#title_case_output').val(titleCase($('#title_case_input').val()));
+                                    $('#title_case_input').val('');
+                                })
+                            </script>
+                        </div>
                     </div><!-- .code-block -->
 
 
-                    <div class="code-block well">
+                    <div class="code-block well row">
                         <h3>Truncate a String</h3>
-                        <p>Truncate a string using an ellipsis.</p>
-                        <pre>
-                            <code class="language-js line-numbers">
-                                function truncateString(str, num) {
-                                    if (num <= 3) {
-                                        return str.slice(0, num) + "...";
-                                    } else if (str.length > num + 3) {
-                                        return str.slice(0, num - 3) + "...";
+                        <div class="col-md-6">
+                            <p><strong>Objective</strong></p>
+                            <p>Truncate a string using an <span class="hover-info" data-hover="The three dots used to indicate an unfinished thought in writing (eg. '...').">ellipsis</span>.</p>
+                            <p><strong>Explanation</strong></p>
+                            <p>This algorithm takes in a string and the number of characters you want to truncate after.</p>
+                            <p>If the number to truncate is less than 4, we return a new string that is the old string sliced from the first character to the 'num' character with an ellipsis at the end.</p>
+                            <p>Otherwise if the string's length is greater than num + 3 (to accommodate for the ellipsis), then we return the string truncated that way.</p>
+                            <p>Lastly, if the string's length is less than num + 3, we simply return the string, untruncated.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><strong>Code</strong></p>
+                            <pre>
+                                <code class="language-js line-numbers">
+                                    function truncateString(str, num) {
+                                        if (num <= 3) {
+                                            return str.slice(0, num) + "...";
+                                        } else if (str.length > num + 3) {
+                                            return str.slice(0, num - 3) + "...";
+                                        }
+                                        return str;
                                     }
-                                    return str;
-                                }
-                            </code>
-                        </pre>
+                                </code>
+                            </pre>
+                        </div>
                     </div><!-- .code-block -->
 
 
