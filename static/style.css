@@ -276,6 +276,29 @@ body.home .social-link {
 	border-right: none;
 }
 
+.work-item {
+	margin-bottom: 24px;
+}
+
+.work-item h3 {
+	margin: 4px 0 10px;
+	font-weight: bold;
+	color: #2af;
+}
+
+.work-item h3 small {
+	float: right;
+}
+
+.work-image {
+	max-width: 100%;
+	height: auto;
+}
+
+
+
+
+
 @media (max-width: 1000px) {
 	.hero {
 		width: 80%;
