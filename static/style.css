@@ -295,6 +295,13 @@ body.home .social-link {
 	height: auto;
 }
 
+.python div {
+	background-color: #e6db74 !important;
+}
+
+.js div {
+	background-color: #66d9ef !important;
+}
 
 
 
