@@ -19,8 +19,15 @@ app.get('/', function(req, res) {
 
 app.get('/code', function(req, res) {
     res.render("code", {
-    	title: "Code Examples",
-    	page: "code"
+        title: "Code Examples",
+        page: "code"
+    });
+});
+
+app.get('/tutorials', function(req, res) {
+    res.render("tutorials", {
+        title: "Tutorials",
+        page: "tutorials"
     });
 });
 
@@ -47,8 +54,15 @@ app.get('/about', function(req, res) {
 
 app.get('/contact', function(req, res) {
     res.render("contact", {
-    	title: "Contact Me",
-    	page: "contact"
+        title: "Contact Me",
+        page: "contact"
+    });
+});
+
+app.get('/admin', function(req, res) {
+    res.render("login", {
+        title: "Login",
+        page: "login"
     });
 });
 
@@ -56,4 +70,4 @@ var server = app.listen(process.env.PORT || 8000, function() {
     console.log("listening on port 8000");
 });
 
-var io = require('socket.io').listen(server);
+// var io = require('socket.io').listen(server);
