@@ -421,6 +421,74 @@
                     </div><!-- .code-block -->
 
 
+                    <div class="code-block well row">
+                        <h3>Find Triangle Number With N Factors</h3>
+                        <div class="col-md-6">
+                            <p><strong>Objective</strong></p>
+                            <p>Return the triangle number that has N factors.</p>
+                            <p><strong>Explanation</strong></p>
+                            <p>In this algorithm we want to find the <span class="hover-info" data-hover="A triangle number is the sum of the sequence of natural numbers up to it. For instance, the 7th triangle number is 1 + 2 + 3 + 4 + 5 + 6 + 7 = 28.">triangle number</span> which has N factors. For this we'll need a helper function to generate a triangle number from an input.</p>
+                            <p>We create a while loop and continue running until our condition is achieved. Within the while loop we have a for loop that appends each factor of our triangle number to an array. After that we count the number of factors to see if its our desired length.</p>
+                            <p>If we have reached our desired length we return that triangle number, otherwise we continue.</p>
+                            
+                        </div>
+                        <div class="col-md-6">
+                            <pre>
+                                <code class="language-python line-numbers">
+                                    def generate_triangle_number(num):
+                                        sum = 0
+                                        for i in range(1, num + 1):
+                                            sum += i
+                                        return sum
+
+                                    def find_triangle_number_with_n_factors(length):
+                                        i = 1
+                                        while(True):
+                                            factors = []
+                                            triangle = generate_triangle_number(i)
+                                            for j in range(1, triangle):
+                                                if triangle % j == 0:
+                                                    factors.append(j)
+                                            if len(factors) >= length:
+                                                return triangle
+                                            i += 1
+                                </code>
+                            </pre>
+                        </div>
+                    </div><!-- .code-block -->
+
+
+                    <div class="code-block well">
+                        <h3>Find Nth Prime Number</h3>
+                        <p>Return the Nth prime number based on input.</p>
+                        <pre>
+                            <code class="language-python line-numbers">
+                                import math
+
+                                def is_prime(n):
+                                    for i in range(2, int(math.sqrt(n)) + 1):
+                                        if n % i == 0:
+                                            return False
+                                    return True
+
+                                def find_nth_prime(num):
+                                    if num <= 2:
+                                        return -1
+                                    
+                                    primes = []
+                                    
+                                    i = 2
+                                    while(len(primes) < num):
+                                        if is_prime(i):
+                                            primes.append(i)
+                                        i += 1
+                                    
+                                    return primes[-1]
+                            </code>
+                        </pre>
+                    </div>
+
+
                     <div class="code-block well">
                         <h3>Sum All Numbers in a Range</h3>
                         <p>Return the sum of all numbers in a range (passed in via an array with two elements).</p>
@@ -577,20 +645,7 @@
                         </pre>
                     </div><!-- .code-block -->
 
-<!-- 
-
-                    <div class="code-block well">
-                        <h3></h3>
-                        <p></p>
-                        <pre>
-                            <code class="language-python line-numbers">
-                            
-                            </code>
-                        </pre>
-                    </div>
-
--->
-
+                    
 
 
 
